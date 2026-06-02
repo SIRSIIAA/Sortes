@@ -1,7 +1,6 @@
 package magisterzuo.disciplina;
 
 /*
- *
  * Kata:
  * - random quick sort, lomuto partition
  * - random quick sort, 3-way partition
@@ -34,20 +33,20 @@ public class Disciplina23 {
     private static int[] triwp(int[] arr, int l, int r) {
         // comes
         var lb = l;
-        var lr = r;
+        var rb = r;
         var p = l;
         var seed = arr[l + (int) (Math.random() * (r - l + 1))];
         // rex
-        while (p <= lr) {
+        while (p <= rb) {
             if (arr[p] == seed) {
                 p++;
             } else if (arr[p] < seed) {
                 si(arr, p++, lb++);
             } else {
-                si(arr, p, lr--);
+                si(arr, p, rb--);
             }
         }
-        return new int[]{lb, lr};
+        return new int[]{lb, rb};
     }
 
     // lomuto partition
